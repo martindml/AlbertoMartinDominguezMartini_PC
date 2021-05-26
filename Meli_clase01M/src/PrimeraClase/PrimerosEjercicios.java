@@ -151,26 +151,40 @@ public class PrimerosEjercicios
 
         String result = "";
 
-        /*while(n < 5)
+        int i = m;
+
+        int cantidadDeNumeros = 0;
+
+        int maximo = 2147483647;
+
+        for(i=d; i <= maximo; i++ )
         {
-
-            int i = m;
-
-            for(i=d; i <= n; i++ )
+            if(cantidadDeNumeros < 5 && tieneDigitos(m,d, i))
             {
-                if()
-                {
-
-                }
+                result = result + " " + i +", ";
+                cantidadDeNumeros ++;
             }
+            else if(cantidadDeNumeros == 5)
+            {
+                break;
+            }
+        }
 
-            n++;
-        }*/
 
         System.out.println("Salida" + result );
 
     }
 
+    private static boolean tieneDigitos(int cantidadDeRepeticiones, int numeroAEncontrar, int numeroARevisar)
+    {
+        boolean result = false;
 
+        String sNumeroARevisar = String.valueOf(numeroARevisar);
+        String sCantidadDeRepeticiones = String.valueOf(cantidadDeRepeticiones);
+        String snumeroAEncontrar = String.valueOf(numeroAEncontrar);
+
+         return -1 < sNumeroARevisar.indexOf(snumeroAEncontrar);
+
+    }
 
 }
