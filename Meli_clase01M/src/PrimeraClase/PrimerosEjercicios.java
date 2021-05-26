@@ -159,12 +159,12 @@ public class PrimerosEjercicios
 
         for(i=d; i <= maximo; i++ )
         {
-            if(cantidadDeNumeros < 5 && tieneDigitos(m,d, i))
+            if(cantidadDeNumeros < n && tieneDigitos(m,d, i))
             {
                 result = result + " " + i +", ";
                 cantidadDeNumeros ++;
             }
-            else if(cantidadDeNumeros == 5)
+            else if(cantidadDeNumeros == n)
             {
                 break;
             }
