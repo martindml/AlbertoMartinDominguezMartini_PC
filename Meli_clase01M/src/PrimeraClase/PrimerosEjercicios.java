@@ -6,8 +6,16 @@ public class PrimerosEjercicios
 {
     public static void main(String arg[])
     {
+        System.out.println("Ejercicio 1-----");
+        ejericio1();
+        System.out.println("Ejercicio 2-----");
+        ejericio2();
+        System.out.println("Ejercicio 3-----");
+        ejericio3();
+        System.out.println("Ejercicio 4-----");
+        ejericio4();
+        System.out.println("Ejercicio 5-----");
         ejericio5();
-
     }
 
     public static void ejericio1()
