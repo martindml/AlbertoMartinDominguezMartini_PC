@@ -122,7 +122,14 @@ public class Main {
 
     private static void Ejercicio2()
     {
-        
+        Circulo circulo = new Circulo(120);
+        Rectangulo rectangulo = new Rectangulo(5,3);
+        Triangulo triangulo = new Triangulo(4,6);
+
+        FiguraGeometrica[] arr={circulo,rectangulo,triangulo};
+
+        double resultado = FiguraUtil.areaPromedio(arr);
+        System.out.println("El promedio de las areas es: " + resultado);
     }
 
 }
