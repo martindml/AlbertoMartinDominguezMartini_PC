@@ -19,9 +19,8 @@ public class Main {
         Ejercicio4();
         System.out.println("-------Ejericio5---------");
         Ejercicio5();
-        /**
-         * El ejecicio 6 esta en el proyecto_Setup
-         * */
+        System.out.println("-------Ejericio6---------");
+        Ejercicio6();
     }
 
     private static void Ejercicio1()
@@ -166,6 +165,69 @@ public class Main {
 
             System.out.println(fecha2.toString());
         }
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+    }
+
+    private static void Ejercicio6()
+    {
+        /*
+        *idem lpad, pero agregando caracteres a la derecha.
+        * */
+        System.out.println("Ejecucion metodo rpad");
+        System.out.println(StringUtil.rpad("5",'0',3));
+
+
+        /*
+        *Quitar los espacios al principio
+        * */
+        System.out.println("Ejecucion metodo ltrim");
+        String cadena = "   pru eba ";
+        System.out.println("String inicial: " + cadena + "Tiene "+ cadena.length() +" caracteres");
+        cadena = StringUtil.ltrim(cadena);
+        System.out.println("String final: " + cadena + " Tiene "+ cadena.length() +" caracteres");
+
+
+        //idem ltrim, pero sin espacios a la derecha.
+        System.out.println("Ejecucion metodo rtrim");
+        cadena = "   pru eba  ";
+        System.out.println("String inicial: " + cadena + "Tiene "+ cadena.length() +" caracteres");
+        cadena = StringUtil.rtrim(cadena);
+        System.out.println("String final: " + cadena + " Tiene "+ cadena.length() +" caracteres");
+
+
+        //idem ltrim, pero sin espacios a la derecha.
+        System.out.println("Ejecucion metodo trim");
+        cadena = "   pru eba  ";
+        System.out.println("String inicial: " + cadena + "Tiene "+ cadena.length() +" caracteres");
+        cadena = StringUtil.trim(cadena);
+        System.out.println("String final: " + cadena + " Tiene "+ cadena.length() +" caracteres");
+
+
+        /*
+        *Retorna la posición de la n-ésima
+        *ocurrencia del carácter c dentro de s, o -1 si s no contiene a c. Por ejemplo, si s = “John|Paul|George|Ringo”, c = ‘|’ y n=2, la función debe retornar la posicióon de la
+        *segunda ocurrencia del carácter ‘|’ (pipe) dentro de la cadena s. Que, en este caso, es: 9.
+        *
+        * */
+        String s = "John|Paul|George|Ringo";
+        char c = '|';
+        int n=2;
+
+        System.out.println("Ejecucion metodo indexOfN con los parametros s=" + s + ", c= " + c + ", n= " + n);
+        int resultado = StringUtil.indexOfN(s,c,n);
+        System.out.println("Resultado es: " + resultado);
+
+        //En este caso no hay segunda ocurrencia entonces devuelve -1
+        s = "John|Paul|George|Ringo";
+        c = 'h';
+        n=2;
+        System.out.println("Ejecucion metodo indexOfN con los parametros s=" + s + ", c= " + c + ", n= " + n);
+        resultado = StringUtil.indexOfN(s,c,n);
+        System.out.println("Resultado es: " + resultado);
+
 
     }
 }
