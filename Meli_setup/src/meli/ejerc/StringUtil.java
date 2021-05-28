@@ -6,6 +6,99 @@ import java.util.HashMap;
 
 public class StringUtil
 {
+	/*
+	 * *Retorna la posición de la n-ésima
+	 *ocurrencia del carácter c dentro de s, o -1 si s no contiene a c. Por ejemplo, si s = “John|Paul|George|Ringo”, c = ‘|’ y n=2, la función debe retornar la posicióon de la
+	 *segunda ocurrencia del carácter ‘|’ (pipe) dentro de la cadena s. Que, en este caso, es: 9.
+	 *
+	 * */
+	public static int indexOfN(String s,char c,int n)
+	{
+		int posicion = -1;
+		int posicionSiguiente = 0;
+
+		for(int i = 0; i < n; i++)
+		{
+
+			posicion = s.indexOf(c,posicionSiguiente);
+			posicionSiguiente = posicion + 1;
+		}
+
+		return posicion;
+	}
+
+	//idem lpad, pero sin espacios a derecha ni izquierda.
+	public static String trim(String s)
+	{
+		return s.trim();
+	}
+
+	///Retorna una cadena idéntica a s pero sin espacios a la izquierda.
+	public static String rtrim(String s)
+	{
+		int position = -1;
+		for(int i= s.length() -1 ;i >= 0 ; i--)
+		{
+			if(s.charAt(i) == ' ')
+			{
+				position = i;
+			}
+			else
+			{
+				break;
+			}
+		}
+		if(position > -1)
+		{
+			return s.substring(0,position);
+		}
+		else
+		{
+			return s;
+		}
+	}
+
+
+	//Retorna una cadena idéntica a s pero sin espacios a la izquierda.
+	public static String ltrim(String s)
+	{
+		int position = -1;
+		for(int i=0;i < s.length(); i++)
+		{
+			if(s.charAt(i) == ' ')
+			{
+				position = i;
+			}
+			else
+			{
+				break;
+			}
+		}
+		if(position > -1)
+		{
+			return s.substring(position);
+		}
+		else
+		{
+			return s;
+		}
+	}
+
+
+
+	// Retorna una cadena de longitud n, compuesta por s
+	// y precedida de tantos caracteres c como sea necesario
+	// para completar la longitud mencionada
+	// Ejemplo lpad("5",'0',3) ==> "500"
+	public static String rpad(String s,char c,int n)
+	{
+		String resultado = s;
+
+		String mask = replicate('0',n - s.length());
+
+		return resultado + mask;
+	}
+
 	// Retorna una cadena compuesta por n caracteres c
 	// Ejemplo: replicate('x',5) ==> 'xxxxx'
 	public static String replicate(char c,int n)
